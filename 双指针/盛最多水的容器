@@ -1,0 +1,42 @@
+////https://leetcode.cn/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-100-liked
+
+
+# include<bits/stdc++.h>
+
+using namespace std;
+
+const int N=1e5+10;
+
+int n,a[N],ans;
+
+int main()
+{
+    cin>>n;
+
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a[i];
+    }
+
+    int i=1,j=n;
+    while(i<j)
+    {
+        int val=(j-i)*min(a[i],a[j]);
+        ans=max(ans,val);
+
+        if(a[i]<=a[j])  //取new为a[i+1]和a[j-1]如果new都大于a[i]a[j]则用到a[i]a[j]计算 则取大的。如果new小于a[i]a[j]则无所谓怎么移动 因为下一步值小于当前答案
+        {
+            i++;
+        }
+        else
+        {
+            j--;
+        }
+    }
+
+    cout<<ans<<endl;
+
+    return 0;
+}
+
+
