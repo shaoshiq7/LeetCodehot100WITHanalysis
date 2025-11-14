@@ -24,7 +24,7 @@ int main()
         int val=(j-i)*min(a[i],a[j]);
         ans=max(ans,val);
 
-        if(a[i]<=a[j])  //取new为a[i+1]和a[j-1]如果new都大于a[i]a[j]则用到a[i]a[j]计算 则取大的。如果new小于a[i]a[j]则无所谓怎么移动 因为下一步值小于当前答案
+        if(a[i]<=a[j])  //为什么比较当前a[i j]而不是a[i+1]a[j-1]:取new为a[i+1]和a[j-1]如果new都大于a[i]a[j]则用到a[i]a[j]计算 则取大的。如果new小于a[i]a[j]则无所谓怎么移动 因为下一步值小于当前答案
         {
             i++;
         }
