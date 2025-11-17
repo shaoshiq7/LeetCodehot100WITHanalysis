@@ -1,0 +1,23 @@
+
+
+class Solution {
+public:
+    void moveZeroes(vector<int>& a) {
+        for (int i = 0,j = i; i < a.size(); i++)
+        {
+            if (a[i]) 
+            {
+                a[j++] = a[i];//i是原数组索引，j是非零数组索引，后边再补0
+            }
+
+            if(i==a.size()-1)
+            {
+                //cout<<"*";
+                while(j<a.size())
+                {
+                    a[j++]=0;
+                }
+            }
+        }
+    }
+};
